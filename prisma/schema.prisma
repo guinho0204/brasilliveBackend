@@ -1,0 +1,187 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:Guinho@0204@localhost:3306/Jan_live?schema=public"
+}
+
+model User{
+  Uuid_user String @id @default(uuid())
+  Image_user String
+  Nome String
+  User String
+  Numero_celular String
+  Password String
+  Followers String
+  Following String
+  Nivel String
+  Visualisacoes String
+  Pcoin_paga_moeda_user String
+  Data_nascimento String
+  Sexo String
+  Idade String
+  Rcoin_recebe_moeda_user String
+  Data_create DateTime @default(now())
+  Saldo_money Float
+  Descricao String
+  Uid_live Int  @unique @default(autoincrement())
+
+  
+
+  @@map("Users")
+
+}
+model Seguindo{
+
+  Uuid_seguindo_table String @id @default(uuid())
+  Id_user_ira_ser_seguido String
+  Id_user_ira_seguir String
+  Nome_user_seguido String
+  Status String
+  Cor String
+    
+    @@unique([Id_user_ira_ser_seguido,Id_user_ira_seguir])
+ 
+  @@map("Seguidores")
+ 
+}
+model Menssagem{
+   Uuid String @id @default(uuid())
+   Remetente String
+   Destinatario String 
+   Menssagem String 
+   Data_Envio DateTime @default(now())
+   id_menssagem Int @unique @default(autoincrement())
+   Menssagem_id String
+   
+   @@map("Menssagem")
+}
+model Presentes{
+  Uuid_presente String @id @default(uuid())
+  Valor String
+  Nome String
+  Presente_imagem String 
+  
+  @@map("Presentes")
+}
+model Recebe_presentes{
+  
+  Uuid_Operacao_dar_presente String @id @default(uuid())
+  Nome String 
+  Uid_user_recebe String
+  Uid_user_dando String
+  Valor String
+  Vezes String
+  Imagem_presente String
+
+  
+
+  @@map("Recebe_presentes")
+}
+
+model Live{
+  Uuid_live String @id @default(uuid())
+  Create_date DateTime @default(now())
+  Image_live String
+  Descricao String
+  Live_id String @unique
+  RCoin_recebe_moeda_live String
+  Nome String
+  Pcoin_paga_moeda_live String
+  uid_user String
+  VizuLive String 
+  
+  @@map("Lives")
+}
+model PagamentoPix{
+
+     Uuid_transacao String @id @default(uuid())
+     Txid String @unique
+     Revisao Int
+     Status String
+     Valor String
+     Chave String
+     Devedor_cpf String
+     Devedor_nome String
+     Loc_id Int
+     Loc_location String
+     Loc_tipocob String
+     Loc_criacao String
+     Location String
+     PixCopiaEcola String 
+     uid_user String
+     Quantidade_moedas String
+
+    @@map("PagamentoPix")
+}
+model PixChaves{
+
+  Uuid_chavepix String @id @default(uuid())
+  Chave String 
+  uid_user String
+  tipo String
+  
+  @@map("PixChaves")
+}
+
+model PixSend{
+ 
+   Uuid_pixsend String @id @default(uuid())
+   Chave String
+   Nome String
+   Status String
+   Valor String
+   Horario String
+   Hash_transacao String
+   Uid_user String
+   EndToendId String @unique
+
+   @@map("PixSend")
+}
+model ChatLive{
+
+  Uuid_chatlive String @id @default(uuid())
+  User String
+  Id_live String
+  Id_user String
+  Menssagem String
+  Valor_presente String
+  Vezes String
+  Icon_presente String
+  Create_at String
+  Id_menssagem Int @unique @default(autoincrement())
+
+
+  @@map("Chatlive")
+
+
+}
+model VisuLive{
+   Uid_VisuLive String @id @default(uuid())
+   User String
+   Id_live String
+   Id_user String
+   AtivoLive String
+
+   @@map("VisuLive")
+}
+model Promotion{
+
+   Uid_Promotion String @id @default(uuid())
+   Nome String 
+   Valor String
+   Descricao String
+   Id_receptor String @default(uuid())
+   Id_Compartilha String  
+
+   @@map("Promotion")
+   
+}

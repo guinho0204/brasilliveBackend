@@ -1,0 +1,13 @@
+import admin from 'firebase-admin';
+
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert({
+      projectId: 'janlive-f0e57',
+      clientEmail: 'firebase-adminsdk-1vspe@janlive-f0e57.iam.gserviceaccount.com',
+      privateKey:'-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDf1HoYo6wadD0o\nygW61xVQxaXE10dk1SAHii8cbwORiuE2SXKf8SPNYiXBhbEBkQgTkn+BVBtIz4ad\nOVzdI7oZ0UpBkBiGSmW4UKuvDMyRsZ6xisZ9Ag9dZmPPDUhYEvcGh18W3ClXVnvc\noSB26Np3Mf2K5P4LsO0vbV1dFP4vCeHGEe1B30dR3h8mGRSuiKC1ADR1/aap6ACn\nnKyX3a4nCc8ooqet7agHMCeuGM2HgPt3cLQmeVynX2dAJVX7qbeFy0SM7SZZgmVf\nSxtIOgB1kVqUZWjSSFZ7SGQG0vz7E5vcJbwX4QiB7k0Tj+Ekc8Sn3AX9HvNQ7gPJ\ne6fBuDHTAgMBAAECggEAH7Bm2t8tSg+D6yby+bliyK0642vxLSrpXnfnZJipAi2N\n5hAu/Mr4nSbUnpntbgHZCWBX0fkU5dGPxumspphczDPv1elvN3AIB7jQHbfrrILf\nq1Yw9NjaUQhigBlq0SFaPN/kjAl+huF1Js7fGEauS2rV8RiriP8zDWBn8/o5ZHI3\nTVQXu3b495YD2Mq3OxN3S4McPx2qIWtpslUBD+3piJwysB4Weq3VbcFyPx7lWitt\nXa/RjQ7LVAJFoateSTNN7N8P36DcLnDWS6p8s4i5+XjKdR/Wq9NIpIfA9s2Q9YRT\nUVlK52kVo3kK4VYAo3Z6o1Q+PetmESd0LXHjCb7sgQKBgQD+2D5Rk2vNauPNH3It\n/BjvdOUZ0/6r1wOUb+bVdA8H8uqnd0sEuEhMNsmQwgGaHo4TAgmdYxMJtwTsciew\nYCbd8XYkdkrY68Z7148cpJaELj9mMpyIfxLG0AqYa1tnIrbOcDqb2M+KxfkbPRPo\njEGWYRJUPb0y7bRSYOymXB7CUwKBgQDg2D1jmhHZNmz2I/4vAQzr3g0fShSv1H3I\nQNngcJQ2lb6wmkvoaWTZRDA8YbEhQOSvHz7pDIh0756Y4U3lRWJmWx+l20QnkOJP\n2aEjioh5VbADXbT2IYUJeRkkK/jv23//tuuvQclMf0DaMw3fCGBdYQstxuV7yC3V\nasObh0nigQKBgE4bDI6H9kRQ/FyDxMTfPO03EHhoBue30HsQCNlm5qxzAQQuhal+\nqXniWMirDT6lGrosp7G7CbyygSnOmudtsLvZI3JtZucw6/ZMzKnkr9T3L6ss29jh\nyWlxna21SaBEfW6r6uqU+pb3si9s+ssNIZTrT2jOO0x+mgOdfSpHlY3NAoGAMTDd\n7WaNtRnlKMyjFaGDNC82a7wHXph8lE0r3aCDrJWCTJzVMpmsSKRUcUFmQUIzReTu\nHIpzaDHsXsIcCqbtajtRZzXbaVSXTqTsThxG01Td1z6vEpIuyu3FhFZidgdtr4JT\nedpIsgW9KH+27y6j9on+qhszpasb6+8ZsHMexQECgYAdvPZjLqa1NGluj9BpjsDS\n5kuXHhNfiPmyQp10kftyvcH3Z4s3KR9N+Dr+kgub+argS7XuyCUgPTQ3gYtjuieJ\nYJf/VyT016tybJA2k4qLXcYhBMXyv37tUoh7bkMyR7cT1L/uFyj+Um+ZAmrwM9+H\n1GLO7SKMyIS5QE/iXtBByg==\n-----END PRIVATE KEY-----\n'
+    }),
+  });
+}
+
+export default admin;
