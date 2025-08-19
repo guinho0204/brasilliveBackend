@@ -1,7 +1,7 @@
 import { Request,Response } from "express";
 import { createuserservice } from "../createuserservice/createuserservice";
 import { Upload } from "@aws-sdk/lib-storage";
-import s3 from "../../../config/s3Client";
+import { s3 } from "../../../config/s3Client";
 import dotenv from "dotenv";
 import fs from 'fs';
 import path from 'path';

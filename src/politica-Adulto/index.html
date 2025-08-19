@@ -1,0 +1,158 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Padrões de Segurança Infantil (CSAE) – <APP_NAME></title>
+  <style>
+    :root { --fg:#0f172a; --muted:#475569; --accent:#0ea5e9; --bg:#ffffff; --card:#f8fafc; }
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Helvetica,Arial,sans-serif;margin:0;background:var(--bg);color:var(--fg);line-height:1.6}
+    header{padding:40px 20px;background:linear-gradient(180deg,#e6f7ff,transparent)}
+    .container{max-width:980px;margin:0 auto;padding:0 20px}
+    h1{font-size:2rem;margin:0 0 6px}
+    h2{font-size:1.35rem;margin-top:2rem}
+    h3{font-size:1.05rem;margin-top:1.25rem}
+    p,li{color:var(--muted)}
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:14px;padding:16px;margin:16px 0}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    code{background:#f1f5f9;padding:2px 6px;border-radius:6px}
+    .footer{font-size:.9rem;color:var(--muted);border-top:1px solid #e2e8f0;padding:20px 0;margin-top:30px}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;background:#111827;color:#f9fafb;border-radius:6px;padding:2px 6px}
+    ul{padding-left:22px}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#ecfeff;color:#0369a1;border:1px solid #bae6fd;font-size:.8rem;margin-left:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Padrões de Segurança Infantil (CSAE) <span class="badge">Política pública</span></h1>
+      <p>Estes padrões descrevem a postura de <strong><DEVELOPER_NAME></strong> para prevenir, detectar, denunciar e remover conteúdos e comportamentos relacionados ao <em>abuso e exploração sexual infantil (CSAE)</em> no aplicativo <strong><APP_NAME></strong>.</p>
+      <p><strong>Última atualização:</strong> 18 de agosto de 2025</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" id="resumo">
+      <h2>1) Declaração de tolerância zero</h2>
+      <p><APP_NAME> e <DEVELOPER_NAME> adotam <strong>tolerância zero</strong> ao CSAE. Conteúdo, tentativa de compartilhamento, solicitação, aliciamento ou qualquer forma de exploração infantil são estritamente proibidos e resultarão em medidas imediatas, incluindo remoção, suspensão e denúncia às autoridades competentes.</p>
+    </section>
+
+    <section class="card" id="escopo">
+      <h2>2) Escopo e definições</h2>
+      <ul>
+        <li><strong>Criança/Adolescente:</strong> pessoa com menos de 18 anos.</li>
+        <li><strong>CSAM:</strong> material de abuso/exploração sexual infantil (inclui imagens, vídeos, áudio, texto, links e <em>deepfakes</em>).</li>
+        <li><strong>Aliciamento:</strong> tentar obter imagens, encontros ou favores sexuais de menores, inclusive por mensagens privadas.</li>
+        <li><strong>Apologia/normalização:</strong> qualquer conteúdo que legitime, promova ou minimize CSAE.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="prevencao">
+      <h2>3) Medidas de prevenção</h2>
+      <ul>
+        <li><strong>Diretrizes claras no app:</strong> telas de onboarding e Centrais de Ajuda deixam explícita a proibição de CSAE.</li>
+        <li><strong>Controles de idade:</strong> recursos destinados a adultos exigem confirmação de maioridade e podem requerer verificação adicional.</li>
+        <li><strong>Bloqueios proativos:</strong> filtros e listas bloqueadas para termos, hashes e links conhecidos relacionados a CSAM.</li>
+        <li><strong>Configurações seguras por padrão:</strong> perfis privados, limites de DMs e moderação reforçada em recursos de mídia.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="deteccao">
+      <h2>4) Detecção e moderação</h2>
+      <ul>
+        <li><strong>Relatórios de usuários:</strong> botão “Denunciar” disponível em perfis, postagens e mensagens.</li>
+        <li><strong>Revisão especializada:</strong> equipe treinada para priorizar e escalar sinais de CSAE 24/7 quando aplicável.</li>
+        <li><strong>Tecnologia de correspondência de hashes:</strong> uso de técnicas de correspondência de <em>hashes</em> e outros sinais para identificar CSAM conhecido, quando tecnicamente viável e legalmente permitido.</li>
+        <li><strong>Restrições automáticas:</strong> congelamento preventivo de compartilhamento e de conta em suspeitas graves até decisão final.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="denuncia">
+      <h2>5) Como denunciar CSAE</h2>
+      <p>Usuários podem denunciar diretamente no app ou por e-mail. Forneça o máximo de detalhes (links, IDs de usuário, capturas):</p>
+      <ul>
+        <li><strong>No app:</strong> toque em <span class="kbd">⋮</span> &rarr; <span class="kbd">Denunciar</span> &rarr; <span class="kbd">Abuso/Exploração infantil</span>.</li>
+        <li><strong>E-mail dedicado:</strong> <a href="mailto:<CONTACT_EMAIL>"><CONTACT_EMAIL></a></li>
+      </ul>
+      <p><em>Fora do app no Brasil:</em> denuncie também ao <a href="https://new.safernet.org.br/denuncie">SaferNet</a> e ao <a href="https://www.gov.br/mdh/pt-br/ondh/disque-100">Disque 100</a>. Em emergências, contate a polícia local.</p>
+    </section>
+
+    <section class="card" id="atuacao">
+      <h2>6) Atuação em incidentes</h2>
+      <ul>
+        <li><strong>Remoção rápida:</strong> conteúdo e contas removidos conforme as políticas e a legislação aplicável.</li>
+        <li><strong>Preservação de evidências:</strong> registros técnicos preservados de forma segura para autoridades, seguindo prazos legais.</li>
+        <li><strong>Notificação a autoridades:</strong> casos de CSAE são reportados conforme a lei. Quando cabível, comunicamos também hotlines especializadas.</li>
+        <li><strong>Informação ao denunciante:</strong> confirmamos o recebimento e, quando possível, informamos o desfecho.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="formacao">
+      <h2>7) Treinamento e suporte à equipe</h2>
+      <ul>
+        <li>Treinamento periódico sobre CSAE, saúde mental, preservação de evidências e protocolos de denúncia.</li>
+        <li>Política interna de bem‑estar e rotação para evitar exposição prolongada a conteúdo sensível.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="dados">
+      <h2>8) Privacidade, segurança e retenção de dados</h2>
+      <ul>
+        <li><strong>Mínimo necessário:</strong> coletamos e tratamos apenas os dados estritamente necessários.</li>
+        <li><strong>Criptografia e controle de acesso:</strong> proteção técnica e organizacional adequada para logs e evidências.</li>
+        <li><strong>Retenção limitada:</strong> períodos de guarda alinhados a obrigações legais e necessidades de investigação.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="ia">
+      <h2>9) Uso de IA e serviços de terceiros</h2>
+      <ul>
+        <li>Ferramentas de IA/terceiros (se usadas) devem respeitar estes padrões e a legislação aplicável.</li>
+        <li>Qualquer processamento automatizado tem supervisão humana e possibilidade de contestação.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="execucao">
+      <h2>10) Execução, apelações e reincidência</h2>
+      <ul>
+        <li><strong>Medidas:</strong> aviso, remoção, suspensão e banimento definitivo.</li>
+        <li><strong>Apelação:</strong> canais de contestação disponíveis no e-mail <a href="mailto:<CONTACT_EMAIL>"><CONTACT_EMAIL></a> em até 15 dias.</li>
+        <li><strong>Reincidência:</strong> bloqueio permanente e compartilhamento com autoridades quando aplicável.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="conformidade">
+      <h2>11) Conformidade com leis e políticas de plataforma</h2>
+      <p>Operamos em conformidade com as leis aplicáveis e com as políticas das lojas de apps, incluindo as exigências de publicação de padrões de CSAE.</p>
+    </section>
+
+    <section class="card" id="contato">
+      <h2>12) Contato designado</h2>
+      <p>Para assuntos relacionados a estes padrões, entre em contato com nosso ponto focal:</p>
+      <ul>
+        <li><strong>Nome/Equipe:</strong> <CONTACT_PERSON> (Segurança & Conformidade)</li>
+        <li><strong>E‑mail:</strong> <a href="mailto:<CONTACT_EMAIL>"><CONTACT_EMAIL></a></li>
+        <li><strong>Empresa/Desenvolvedor:</strong> <DEVELOPER_NAME></li>
+      </ul>
+    </section>
+
+    <section class="card" id="historico">
+      <h2>13) Histórico de versões</h2>
+      <ul>
+        <li><strong>18/08/2025:</strong> primeira publicação destes padrões.</li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      <p>© <span id="year"></span> <DEVELOPER_NAME>. Todos os direitos reservados. Documento referente ao aplicativo <APP_NAME>.</p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

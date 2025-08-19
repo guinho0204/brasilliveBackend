@@ -2,7 +2,7 @@ import { Request,Response } from "express"
 import { createPresenteService } from "../createPresentesService/createPresenteService"
 import fs from 'fs';
 import path from 'path';
-import s3 from "../../../config/s3Client";
+import { s3 } from "../../../config/s3Client";
 import { Upload } from "@aws-sdk/lib-storage";
 
 class createPresentesController{

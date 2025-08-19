@@ -10,7 +10,8 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = "mysql://root:Guinho@0204@localhost:3306/Jan_live?schema=public"
+  url      = "mysql://root:Guinho@0204@localhost:3306/jan_live"
+  
 }
 
 model User{
@@ -184,4 +185,13 @@ model Promotion{
 
    @@map("Promotion")
    
+}
+model configLive {
+  Uid_config_live String @id @default(uuid())
+  Token String 
+  AppId String
+  Uid Int  @unique @default(autoincrement())
+
+
+  @@map("ConfigLive")
 }

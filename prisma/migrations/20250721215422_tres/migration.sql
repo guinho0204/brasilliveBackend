@@ -179,3 +179,13 @@ CREATE TABLE `Promotion` (
 
     PRIMARY KEY (`Uid_Promotion`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `ConfigLive` (
+    `Uid_config_live` VARCHAR(191) NOT NULL,
+    `Token` VARCHAR(191) NOT NULL,
+    `Uid` INTEGER NOT NULL AUTO_INCREMENT,
+
+    UNIQUE INDEX `ConfigLive_Uid_key`(`Uid`),
+    PRIMARY KEY (`Uid_config_live`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

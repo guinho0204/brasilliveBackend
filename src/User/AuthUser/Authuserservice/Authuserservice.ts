@@ -13,7 +13,7 @@ interface AuthRequest{
 }
 class Authuserservice{
      async execute({numero_celular,password}:AuthRequest){
-        
+        try{
          const login = await prismaCli.user.findFirst({
             where:{
                 Numero_celular:numero_celular,
@@ -67,6 +67,10 @@ class Authuserservice{
             uid_live:login.Uid_live,
             rcoin_recebe_moeda_user:login.Rcoin_recebe_moeda_user,
             token:token}
+
+          }catch(err){
+              throw new Error('erro ao fazer login')
+          }
      }
 }
 export{Authuserservice}

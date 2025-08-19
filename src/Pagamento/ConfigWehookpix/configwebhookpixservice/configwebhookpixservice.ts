@@ -13,7 +13,7 @@ class configwebhookpixservice{
             options_producao['validateMtls'] = false
 
             const body = {
-                webhookUrl: 'https://accurate-vision-production.up.railway.app/webhook',
+                webhookUrl: 'https://alert-charm-production.up.railway.app/webhook',
             };
             
             const params = {

@@ -47,7 +47,7 @@ import { updatevizulivecontroller } from "./Live/UpdateVizulive/updatevizuliveco
 import { createvizulivecontroller } from "./Live/VizuLive/CreateVizuLive/createvizulivecontroller/createvizulivecontroller";
 import { listvizulivecontroller } from "./Live/VizuLive/ListVizulive/listvizulivecontroller/listvizulivecontroller";
 import { deletevizulivecontroller } from "./Live/VizuLive/DeleteVizuLive/deletevizulivecontroller/deletevizulivecontroller";
-
+import { createtokenlivecontroller } from "./Live/TokenLive/createtokenlive/createtokenlivecontroller/createtokenlivecontroller";
 
 
 
@@ -62,6 +62,11 @@ import { listseguidorescontroller } from "./User/Seguidores/ListTodosSeguidores/
 import { updateuserimagecontroller } from "./User/UpdateUserImage/updateuserimagecontroller/updateuserimagecontroller";
 import { updateuserdatanivercontroller } from "./User/UpdateUserDataniver/updateuserdatanivercontroller/updateuserdatanivercontroller";
 import uploadUploader from '../src/config/multerUpload'
+import { settokencontroller } from "./Live/TokenLive/settokenlive/settokencontroller/settokencontroller";
+import { ceratepolicprivacity } from "./createpoticprivaiti/createpoliticprivaciti";
+import { createpaginaabusoinfantilcontroller } from "./politica-contra-abusoinfantil/createpaginaabusoinfcontroller";
+import { createpaginacontroller } from "./paginaDownloadApp/createpaginacontroller";
+import { createpaginapoliticaadulto } from "./politica-Adulto/createpaginapoliticaadulto/createpaginapoliticaadulto";
 const router = Router();
 
 const upload = multer(uploadConfig.upload('./tmp'));
@@ -116,5 +121,11 @@ router.delete('/deletevizu',new deletevizulivecontroller().handle)
 router.get('/listSeguidores',new listseguidorescontroller().handle)
 router.put('/updateImageUser',upload.single('file'),new updateuserimagecontroller().handle)
 router.put('/updatedatanascimento',new updateuserdatanivercontroller().handle)
+router.post('/createtoken',new createtokenlivecontroller().hanlde)
+router.get('/settoken',new settokencontroller().handle)
+router.get('/politica-privacidade', new ceratepolicprivacity().handle)
+router.get('/politocaabusoinfantil',new createpaginaabusoinfantilcontroller().handle)
+router.get('/paginaDownloadApp', new createpaginacontroller().handle)
+router.get('/politica-adulto',new createpaginapoliticaadulto().handle)
 
 export{router}

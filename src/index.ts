@@ -135,37 +135,37 @@ app.post('/webhook/pix', async(req: Request, res: Response,) =>{
     io.on('connection', (socket) => {
       console.log('A user connected');
 
-     socket.on('operacaoCamera',([{id_liveF,msg}]) =>{
+     socket.once('operacaoCamera',([{id_liveF,msg}]) =>{
             console.log(msg,id_liveF)
              io.emit("mensagemCamera",{id_liveF,msg})  
 
      })
 
-     socket.on('presentes', ({ id_live, presente, valor, vezes, imagem_presente, uid_user }) => {
+     socket.once('presentes', ({ id_live, presente, valor, vezes, imagem_presente, uid_user }) => {
       console.log("infos:", id_live, presente, valor, vezes);
       io.emit("presentes", { id_live, presente, valor, vezes, imagem_presente, uid_user });
     });
-     socket.on('ativalistavizu',(msg) =>{
+     socket.once('ativalistavizu',(msg) =>{
 
            io.emit('ativalistavizu',msg)
            console.log(msg)
      })
-     socket.on('enviamensagem',([{msg,id_live}])=>{
+     socket.once('enviamensagem',([{msg,id_live}])=>{
            io.emit('enviamensagem',{msg,id_live})
            console.log(msg+" e o id é "+ id_live)
      })
 
-     socket.on("infolive", ([{ id_live, statuslive }]) => {
+     socket.once("infolive", ([{ id_live, statuslive }]) => {
       console.log("infolive status", id_live, statuslive);
       io.emit("infolive", { id_live, statuslive }); // ou "recebeinfo"
     });
 
-    socket.on("atualizarMoedas",(atualizar)=>{
+    socket.once("atualizarMoedas",(atualizar)=>{
         io.emit("atualizarMoedas",atualizar)
         console.log(atualizar)
     })
   
-          socket.on('deleteMessage', (data) => {
+          socket.once('deleteMessage', (data) => {
             const { messageId } = data;
              console.log(messageId)
             // Lógica para excluir a mensagem do banco de dados ou memória

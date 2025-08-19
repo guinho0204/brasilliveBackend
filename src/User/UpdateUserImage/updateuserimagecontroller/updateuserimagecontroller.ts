@@ -3,10 +3,10 @@ import { updateuserimagemservice } from "../updateuserimageservice/updateuserima
 import dotenv from "dotenv";
 import fs from 'fs';
 import path from 'path';
-import s3 from "../../../config/s3Client";
+import { s3 } from "../../../config/s3Client";
 import { Upload} from "@aws-sdk/lib-storage";
 import {DeleteObjectCommand } from "@aws-sdk/client-s3";
-import s3Client from "../../../config/s3Client";
+
 import admin from "../../../config/firebaseAdmin";
 
 class updateuserimagecontroller{
@@ -36,7 +36,7 @@ class updateuserimagecontroller{
               Key: image_Antiga,
             });
 
-           await s3Client.send(deleteCommand); 
+           await s3.send(deleteCommand); 
 
          
          const uploader = new Upload({
