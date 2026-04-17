@@ -1,6 +1,5 @@
 import { prismaCli } from "../../../prisma/conection";
 import { hash } from "bcryptjs";
-import admin from "../../../config/firebaseAdmin";
 
 interface UserRequest{
     
@@ -65,7 +64,7 @@ class createuserservice{
 
        
          
-        return{createuser}         
+        return {createuser}         
  
 
        }catch(err){
