@@ -1,12 +1,5 @@
 import { Request,Response } from "express";
 import { createuserservice } from "../createuserservice/createuserservice";
-import { Upload } from "@aws-sdk/lib-storage";
-import { s3 } from "../../../config/s3Client";
-import dotenv from "dotenv";
-import fs from 'fs';
-import path from 'path';
-
-
 
 
 class createusercontroller{
@@ -23,13 +16,8 @@ class createusercontroller{
         }else{ 
 
 
-         const {originalname, filename:image_user} = req.file 
+        const {originalname, filename:image_user} = req.file 
          
-
-         const filePath = path.resolve(__dirname, '..', '..', '..', '..', 'tmp', image_user);
-
-          
-
         const service = await userservice.execute({
             image_user,
             nome,
@@ -47,22 +35,6 @@ class createusercontroller{
             
         })
 
-
-      const uploader = new Upload({
-            client: s3,
-            params: {
-              Bucket: process.env.S3_BUCKET_NAME,
-              Key: image_user,
-              Body: fs.createReadStream(filePath), 
-              ContentType: req.file.mimetype,
-              
-            },
-          });
-      
-          const result = await uploader.done(); 
-      
-          
-        
         return res.json(service)
        
         }
@@ -73,4 +45,6 @@ class createusercontroller{
     }
 }
 export{createusercontroller}
+
+
 
